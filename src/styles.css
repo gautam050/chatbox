@@ -1,0 +1,93 @@
+:root {
+  --bg: #f7f7fb;
+  --card: #ffffff;
+  --muted: #666;
+  --accent: #2563eb;
+}
+* {
+  box-sizing: border-box;
+}
+body,
+html,
+#root {
+  height: 100%;
+  margin: 0;
+  font-family: Inter, system-ui, Arial, sans-serif;
+  background: var(--bg);
+}
+.app {
+  max-width: 900px;
+  margin: 24px auto;
+  background: var(--card);
+  border-radius: 10px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+}
+.app-header {
+  padding: 16px 20px;
+  border-bottom: 1px solid #eee;
+}
+.chat-container {
+  display: flex;
+  flex-direction: column;
+  height: 70vh;
+  padding: 12px;
+}
+.messages {
+  flex: 1;
+  overflow: auto;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.message {
+  max-width: 80%;
+  padding: 10px 12px;
+  border-radius: 10px;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.02);
+}
+.message .role {
+  font-size: 11px;
+  color: var(--muted);
+  margin-bottom: 6px;
+}
+.message.user {
+  align-self: flex-end;
+  background: #e6f0ff;
+}
+.message.assistant {
+  align-self: flex-start;
+  background: #f1f3f5;
+}
+.input-area {
+  display: flex;
+  gap: 8px;
+  padding: 12px;
+  border-top: 1px solid #eee;
+}
+.input-area input {
+  flex: 1;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+.controls {
+  display: flex;
+  gap: 8px;
+}
+.controls button {
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 0;
+  background: var(--accent);
+  color: white;
+  cursor: pointer;
+}
+.controls button[disabled] {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+.controls button[type="button"] {
+  background: #777;
+}
